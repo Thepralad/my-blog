@@ -1,0 +1,396 @@
+/* =========================================================
+   prahlad gurung's homepage — style.css
+   a Y2K / Geocities-flavored stylesheet
+   ========================================================= */
+
+:root {
+  --bg-deep: #05001a;
+  --bg-panel: #f3e9ff;
+  --accent-magenta: #ff2fd0;
+  --accent-cyan: #00e5ff;
+  --accent-yellow: #fff200;
+  --accent-green: #39ff14;
+  --text-dark: #1b0033;
+  --link-blue: #0000ee;
+  --link-visited: #551a8b;
+  --font-display: "Comic Sans MS", "Chalkboard SE", cursive;
+  --font-body: "Times New Roman", Times, serif;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.photo{
+    width: 500px;
+    padding-left: 120px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--bg-deep);
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #ffffff 100%, transparent 0),
+    radial-gradient(2px 2px at 90px 80px, #ffffff 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 150px 40px, var(--accent-cyan) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 200px 120px, #ffffff 100%, transparent 0),
+    radial-gradient(2px 2px at 60px 150px, var(--accent-magenta) 100%, transparent 0),
+    radial-gradient(1.5px 1.5px at 250px 60px, #ffffff 100%, transparent 0);
+  background-size: 260px 180px;
+  background-repeat: repeat;
+}
+
+/* custom scrollbar, because it's the year 2000-something */
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--accent-magenta), var(--accent-cyan));
+  border: 2px solid #ffffff;
+}
+* {
+  scrollbar-color: var(--accent-magenta) var(--bg-deep);
+}
+
+/* ===== marquee banner ===== */
+.top-marquee {
+  background: #000000;
+  color: var(--accent-yellow);
+  font-family: var(--font-mono);
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 6px 0;
+  border-bottom: 3px dashed var(--accent-magenta);
+  font-size: 14px;
+}
+
+/* ===== page wrapper ===== */
+.page {
+  max-width: 900px;
+  aspect-ratio: 1 / 1;
+  overflow-y: auto;
+  margin: 24px auto 48px;
+  background: var(--bg-panel);
+  border: 4px double var(--accent-magenta);
+  box-shadow:
+    0 0 0 3px #000000,
+    0 0 0 6px var(--accent-cyan),
+    8px 8px 0 0 rgba(0, 0, 0, 0.6);
+  padding: 24px;
+}
+
+/* ===== profile card ===== */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.polaroid {
+  background: #ffffff;
+  border: 1px solid #999999;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  padding: 10px 10px 4px;
+  transform: rotate(-4deg);
+  flex-shrink: 0;
+}
+
+.polaroid img {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  background: #cccccc;
+  border: 1px solid #666666;
+}
+
+.polaroid-caption {
+  font-family: var(--font-display);
+  font-size: 12px;
+  text-align: center;
+  margin: 6px 0 2px;
+  color: #333333;
+}
+
+.profile-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.glow-name {
+  font-family: var(--font-display);
+  font-size: 34px;
+  margin: 0 0 4px;
+  color: var(--accent-magenta);
+  text-shadow:
+    0 0 4px #ffffff,
+    0 0 10px var(--accent-magenta),
+    0 0 18px var(--accent-cyan);
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: var(--text-dark);
+}
+
+.status-line {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blink-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 6px var(--accent-green);
+  animation: blink 1.2s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+/* ===== rainbow divider ===== */
+.rainbow-rule {
+  height: 6px;
+  margin: 22px 0;
+  background: repeating-linear-gradient(
+    90deg,
+    #ff0000 0 20px,
+    #ff9900 20px 40px,
+    #fff200 40px 60px,
+    #33ff00 60px 80px,
+    #00e5ff 80px 100px,
+    #cc00ff 100px 120px
+  );
+  border: 1px solid #000000;
+}
+
+/* ===== blogs section ===== */
+.section-title {
+  font-family: var(--font-display);
+  color: var(--text-dark);
+  font-size: 22px;
+  text-align: center;
+  margin: 0 0 14px;
+  text-shadow: 1px 1px 0 var(--accent-cyan);
+}
+
+.blog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border: 2px inset #999999;
+}
+
+.blog-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px dashed #bbbbbb;
+  font-size: 15px;
+}
+
+.blog-entry:last-child {
+  border-bottom: none;
+}
+
+.blog-entry .bullet {
+  color: var(--accent-magenta);
+}
+
+.blog-entry a {
+  color: var(--link-blue);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.blog-entry a:visited {
+  color: var(--link-visited);
+}
+
+.blog-entry a:hover {
+  color: #ff0000;
+}
+
+.blog-entry.placeholder .entry-text {
+  color: #666666;
+  font-style: italic;
+}
+
+.tag-new {
+  background: var(--accent-yellow);
+  color: #000000;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 5px;
+  border: 1px solid #000000;
+}
+
+.entry-date {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #888888;
+}
+
+/* ===== footer ===== */
+.construction-banner {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--accent-yellow) 0 14px,
+    #000000 14px 28px
+  );
+  color: #000000;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  padding: 6px 4px;
+  margin-bottom: 14px;
+}
+
+.construction-banner span {
+  background: #ffffff;
+  padding: 2px 8px;
+  display: inline-block;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hit-counter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.counter-digits {
+  background: #000000;
+  color: var(--accent-green);
+  padding: 3px 8px;
+  letter-spacing: 3px;
+  border: 2px solid #333333;
+  text-shadow: 0 0 4px var(--accent-green);
+}
+
+.best-viewed {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #555555;
+  margin: 0;
+}
+
+/* ===== blog post page ===== */
+.page.blog-page {
+  aspect-ratio: auto;
+  overflow-y: visible;
+  max-width: 720px;
+}
+
+.back-link {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--link-blue);
+  text-decoration: none;
+  background: #ffffff;
+  border: 2px outset #999999;
+  padding: 4px 10px;
+  margin-bottom: 12px;
+}
+
+.back-link:hover {
+  color: #ff0000;
+  border-style: inset;
+}
+
+.blog-header {
+  text-align: center;
+}
+
+.blog-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--accent-magenta);
+  text-shadow:
+    0 0 3px #ffffff,
+    0 0 8px var(--accent-cyan);
+  margin: 4px 0;
+}
+
+.blog-content {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.blog-content p {
+  margin: 0 0 16px;
+}
+
+.blog-content .stay-tuned {
+  font-family: var(--font-display);
+  font-weight: bold;
+  color: var(--text-dark);
+  text-align: center;
+  font-size: 18px;
+  border-top: 1px dashed #999999;
+  padding-top: 14px;
+}
+
+.blog-inline-list {
+  background: #ffffff;
+  border: 2px inset #999999;
+  margin: 0 0 16px;
+  padding: 10px 10px 10px 30px;
+}
+
+.blog-inline-list li {
+  margin-bottom: 4px;
+}
+
+/* ===== small screens ===== */
+@media (max-width: 480px) {
+  .page {
+    margin: 12px;
+    padding: 16px;
+  }
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .status-line {
+    justify-content: center;
+  }
+  .entry-date {
+    margin-left: 0;
+  }
+}
